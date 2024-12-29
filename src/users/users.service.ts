@@ -25,9 +25,6 @@ export class UsersService extends PrismaClient implements OnModuleInit {
   async create(createUserDto: CreateUserDto) {
     const { name, email, password, status = true } = createUserDto;
 
-
-
-
     try {
       // Llamada al microservicio de autenticación para registrar el usuario (este maneja la contraseña)
       const authUser = await firstValueFrom(
